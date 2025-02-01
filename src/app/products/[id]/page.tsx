@@ -12,7 +12,7 @@ type Product = {
   category:string;
 };
 
-async function productById(id: string) {
+async function productById(id: any) {
   const response = await axios.get(`https://fakestoreapi.com/products/${id}`);
   await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate delay
 
