@@ -3,11 +3,6 @@ import '@/app/globals.css';
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-
-type Props = {
-  params: { id: string }; 
-};
-
 // Define the Product type
 type Product = {
   id: string;
@@ -18,27 +13,26 @@ type Product = {
   category: string;
 };
 
-
-async function productById(id: string) {
+// Async function to fetch product data
+async function productById(id: string): Promise<Product | null> {
   try {
     const response = await axios.get(`https://fakestoreapi.com/products/${id}`);
     await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate delay
     return response.data;
   } catch (error) {
-  
+    console.error(error);
     return null;
   }
 }
 
+// The component that takes params as props
+export default async function ProductPage({ params }: { params: { id: string } }) {
+  const { id } = await params; // Destructure the id from params
 
-export default async function ProductPage({ params }: Props) {
-  const { id } = await params; 
-  console.log(typeof id)
-  console.log(typeof params)
   const product = await productById(id);
-  
+
   if (!product) {
-    return notFound(); 
+    return notFound(); // Return 404 if product is not found
   }
 
   return (
@@ -51,7 +45,7 @@ export default async function ProductPage({ params }: Props) {
               height={500}
               src={product.image}
               alt={product.title}
-              priority 
+              priority
               className="w-full max-w-md h-96 object-contain rounded-lg"
             />
           </div>
