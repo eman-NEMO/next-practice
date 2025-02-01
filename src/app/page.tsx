@@ -1,7 +1,6 @@
 import axios from "axios";
 import Link from "next/link";
 import Image from "next/image";
-
 import './globals.css'
 type Product = {
   id: string;
@@ -28,7 +27,6 @@ export default async function ProductsPage() {
           <div key={product.id} className="bg-white shadow-md rounded-lg p-4 text-center">
           <Link
                 href={`/products/${product.id}`}
-               
               >
                  <div className="">
                  <Image 
