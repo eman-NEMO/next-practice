@@ -2,12 +2,12 @@
 
 This is a responsive Products Gallery website built with Next.js and Tailwind CSS. It fetches product data from the Fake Store API and displays a list of products, along with detailed information for each product. The app supports dynamic routing for product details and is fully responsive.
 
-### 🚀 Live Demo
+## 🚀 Live Demo
 
 Live Demo Link (//)
 
 
-### 🛠 Tech Stack
+## 🛠 Tech Stack
 
 Next.js - React framework for server-side rendering and static site generation.
 
@@ -15,18 +15,18 @@ Tailwind CSS - Utility-first CSS framework for styling.
 
 Axios - Fetching data from the Fake Store API.
 
-### 📥 Installation & Running the Project Locally
+## 📥 Installation & Running the Project Locally
 
-#### 1️⃣ Clone the repository:
+### 1️⃣ Clone the repository:
 
 git clone https://github.com/your-username/products-gallery.git
 cd products-gallery
 
-#### 2️⃣ Install dependencies:
+### 2️⃣ Install dependencies:
 
 npm install  # or yarn install
 
-#### 3️⃣ Start the development server:
+### 3️⃣ Start the development server:
 
 npm run dev  # or yarn dev
 
@@ -34,9 +34,9 @@ npm run dev  # or yarn dev
 
 
 
-### 📌 Features
+## 📌 Features
 
-#### ✅ Products Page
+### ✅ Products Page
 
 Fetches products from the Fake Store API.
 
@@ -44,7 +44,7 @@ Displays name, image, price, and short description.
 
 Styled with Tailwind CSS for a clean UI.
 
-#### ✅ Product Details Page
+### ✅ Product Details Page
 
 Clicking a product navigates to its details page (e.g., /products/[id]).
 
@@ -62,14 +62,14 @@ Category
 
 Uses Next.js dynamic routing.
 
-#### ✅ Additional Enhancements
+### ✅ Additional Enhancements
 
 
 ⏳ Loading States: Displays a spinner while fetching data.
 
 📱 Responsive Design: Optimized for mobile and desktop views.
 
-#### 🔗 API Reference
+### 🔗 API Reference
 
 Fetch all products: GET https://fakestoreapi.com/products
 
