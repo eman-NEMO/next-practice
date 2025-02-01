@@ -62,7 +62,7 @@ Category
 
 Uses Next.js dynamic routing.
 
-## ✅ Additional Enhancements
+##  Additional Enhancements
 
 
 ⏳ Loading States: Displays a spinner while fetching data.
