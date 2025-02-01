@@ -20,12 +20,10 @@ export default async function ProductsPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-center mb-10">Products</h1>
-      
+      <h1 className="text-3xl font-bold text-center mb-10 text-gray-600">Products</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {products.map((product) => (
           <div key={product.id} className="bg-white shadow-md rounded-lg p-4 text-center">
-         
           <Link
                 href={`/products/${product.id}`}
                
