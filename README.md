@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📌Project Description
 
-## Getting Started
+This is a responsive Products Gallery website built with Next.js and Tailwind CSS. It fetches product data from the Fake Store API and displays a list of products, along with detailed information for each product. The app supports dynamic routing for product details and is fully responsive.
 
-First, run the development server:
+## 🚀 Live Demo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Live Demo Link (//)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠 Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Next.js - React framework for server-side rendering and static site generation.
 
-## Learn More
+Tailwind CSS - Utility-first CSS framework for styling.
 
-To learn more about Next.js, take a look at the following resources:
+Axios - Fetching data from the Fake Store API.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📥 Installation & Running the Project Locally
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 1️⃣ Clone the repository:
 
-## Deploy on Vercel
+git clone https://github.com/eman-NEMO/next-practice.git
+cd products-gallery
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 2️⃣ Install dependencies:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+npm install  
+
+### 3️⃣ Start the development server:
+
+npm run dev  
+
+🔹 Open http://localhost:3000 in your browser to see the app
+
+
+
+## 📌 Features
+
+### ✅ Products Page
+
+Fetches products from the Fake Store API.
+
+Displays name, image, price, and short description.
+
+Styled with Tailwind CSS for a clean UI.
+
+### ✅ Product Details Page
+
+Clicking a product navigates to its details page (e.g., /products/[id]).
+
+#### Displays full product details:
+
+Name
+
+Image
+
+Full description
+
+Price
+
+Category
+
+Uses Next.js dynamic routing.
+
+##  Additional Enhancements
+
+
+⏳ Loading States: Displays a spinner while fetching data.
+
+📱 Responsive Design: Optimized for mobile and desktop views.
+
+### 🔗 API Reference
+
+Fetch all products: GET https://fakestoreapi.com/products
+
+Fetch product by ID: GET https://fakestoreapi.com/products/{id}
+
