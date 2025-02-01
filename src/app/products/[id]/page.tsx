@@ -19,7 +19,7 @@ type Product = {
 };
 
 
-async function productById(id: string): Promise<Product | null> {
+async function productById(id: any): Promise<Product | null> {
   try {
     const response = await axios.get(`https://fakestoreapi.com/products/${id}`);
     await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate delay
@@ -34,6 +34,7 @@ async function productById(id: string): Promise<Product | null> {
 export default async function ProductPage({ params }: Props) {
   const { id } = await params; 
   console.log(typeof id)
+  console.log(typeof params)
   const product = await productById(id);
   
   if (!product) {
