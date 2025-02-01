@@ -11,6 +11,7 @@ type Product = {
 
 async function getProducts() {
   const response = await axios.get("https://fakestoreapi.com/products");
+  await new Promise((resolve) => setTimeout(resolve, 1000));
   return response.data;
 }
 
@@ -19,12 +20,17 @@ export default async function ProductsPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-center mb-8">Products</h1>
+      <h1 className="text-3xl font-bold text-center mb-10">Products</h1>
       
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {products.map((product) => (
           <div key={product.id} className="bg-white shadow-md rounded-lg p-4 text-center">
-          <div className="">
+         
+          <Link
+                href={`/products/${product.id}`}
+               
+              >
+                 <div className="">
           <img
               src={product.image}
               alt={product.title}
@@ -37,13 +43,14 @@ export default async function ProductsPage() {
                 {product.description.slice(0, 55)}... 
               </p>
               <p className="text-xl font-bold text-gray-600">${product.price}</p>
-              <Link
-                href={`/products/${product.id}`}
-                className="inline-block mt-3 bg-gray-500 text-sm text-white  px-4 py-2 rounded-md hover:bg-green-600"
-              >
-                View Details
+             
+
+             <button  className="inline-block mt-3 bg-gray-500 text-sm font-semibold text-white  px-4 py-2 rounded-md hover:bg-gray-400">
+                    Add To Cart
+             </button>
+                </div>
               </Link>
-            </div>
+          
           </div>
         ))}
       </div>
