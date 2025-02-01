@@ -19,13 +19,13 @@ type Product = {
 };
 
 
-async function productById(id: any): Promise<Product | null> {
+async function productById(id: string) {
   try {
     const response = await axios.get(`https://fakestoreapi.com/products/${id}`);
     await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate delay
     return response.data;
   } catch (error) {
-    console.error(error); // Log error if fetch fails
+  
     return null;
   }
 }
