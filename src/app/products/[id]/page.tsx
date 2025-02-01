@@ -1,5 +1,6 @@
 import axios from "axios";
 import '@/app/globals.css'
+import Image from "next/image";
 type Props = {
   params: { id: string };
 };
@@ -12,7 +13,7 @@ type Product = {
   category:string;
 };
 
-async function productById(id: string) {
+async function productById(id: any) {
   const response = await axios.get(`https://fakestoreapi.com/products/${id}`);
   await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate delay
 
@@ -29,7 +30,9 @@ export default async function ProductPage({ params }: Props) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
    
           <div className="flex justify-center ">
-            <img
+            <Image
+              width={500}
+              height={500}
               src={product.image}
               alt={product.title}
               className="w-full max-w-md h-96 object-contain rounded-lg "

@@ -1,5 +1,7 @@
 import axios from "axios";
 import Link from "next/link";
+import Image from "next/image";
+
 import './globals.css'
 type Product = {
   id: string;
@@ -29,11 +31,15 @@ export default async function ProductsPage() {
                
               >
                  <div className="">
-          <img
-              src={product.image}
-              alt={product.title}
-              className="w-full h-40 object-contain "
-            />
+                 <Image 
+  src={product.image} 
+  alt={product.title} 
+  width={400} 
+  height={400} 
+  className="w-full h-40 object-contain " 
+  priority 
+/>
+
           </div>
             <div className="mt-4">
               <h2 className="text-lg font-semibold">{product.title.slice(0,20)}</h2>
