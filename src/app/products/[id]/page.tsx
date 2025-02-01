@@ -3,10 +3,12 @@ import '@/app/globals.css';
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
+// Define the Props for your page component
 type Props = {
-  params: { id: string }; 
+  params: { id: string }; // params from the dynamic route
 };
 
+// Define the Product type
 type Product = {
   id: string;
   title: string;
@@ -16,20 +18,26 @@ type Product = {
   category: string;
 };
 
+// Fetch product by ID from the API
 async function productById(id: string): Promise<Product | null> {
   try {
     const response = await axios.get(`https://fakestoreapi.com/products/${id}`);
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate delay
     return response.data;
   } catch (error) {
-    return null; 
+    console.error(error); // Log error if fetch fails
+    return null;
   }
 }
 
+// ProductPage component which is rendered dynamically for the product page
 export default async function ProductPage({ params }: Props) {
-  const { id } = params;
-  const product = await productById(id);
-  if (!product) return notFound(); 
+  const { id } = params; // Extract `id` from params
+  const product = await productById(id); // Fetch product by ID
+  
+  if (!product) {
+    return notFound(); // Return 404 if no product found
+  }
 
   return (
     <div className="flex items-center justify-center min-h-screen">
@@ -50,6 +58,7 @@ export default async function ProductPage({ params }: Props) {
             <p className="text-gray-500 text-lg mb-4">{product.description}</p>
             <p className="text-2xl font-bold text-gray-600 mb-5">{product.category}</p>
             <p className="text-2xl font-bold text-gray-500 mb-6">${product.price}</p>
+
             <button className="bg-gray-500 text-white px-20 py-3 font-semibold rounded-md hover:bg-gray-400 transition">
               Add to Cart
             </button>
