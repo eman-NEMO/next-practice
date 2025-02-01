@@ -3,20 +3,10 @@ import '@/app/globals.css';
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-
-type Product = {
-  id: string;
-  title: string;
-  price: string;
-  image: string;
-  description: string;
-  category: string;
-};
-
 async function productById(id: string) {
   try {
     const response = await axios.get(`https://fakestoreapi.com/products/${id}`);
-    await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate delay
+    await new Promise((resolve) => setTimeout(resolve, 1000)); 
     return response.data;
   } catch (error) {
     return null;
