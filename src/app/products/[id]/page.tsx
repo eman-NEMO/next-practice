@@ -3,8 +3,8 @@ type Props = {
   params: { id: string };
 };
 
-export default function product({ params }: Props) {
-  const { id } = params;
+export default async function product({ params }: Props) {
+  const { id } = await params;
 
   // Mock Data (Replace with API call or database fetch)
   const products = [
