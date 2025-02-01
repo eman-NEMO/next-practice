@@ -4,7 +4,7 @@ This is a responsive Products Gallery website built with Next.js and Tailwind CS
 
 ## 🚀 Live Demo
 
-Live Demo Link (//)
+Live Demo Link (https://next-practice-rho-coral.vercel.app/)
 
 
 ## 🛠 Tech Stack
