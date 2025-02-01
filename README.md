@@ -1,4 +1,4 @@
-📌 Project Description
+📌** Project Description **
 
 This is a responsive Products Gallery website built with Next.js and Tailwind CSS. It fetches product data from the Fake Store API and displays a list of products, along with detailed information for each product. The app supports dynamic routing for product details and is fully responsive.
 
