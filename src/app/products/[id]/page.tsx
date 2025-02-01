@@ -3,9 +3,9 @@ import '@/app/globals.css';
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-// Define the Props for your page component
+
 type Props = {
-  params: { id: string }; // params from the dynamic route
+  params: { id: string }; 
 };
 
 // Define the Product type
@@ -18,7 +18,7 @@ type Product = {
   category: string;
 };
 
-// Fetch product by ID from the API
+
 async function productById(id: string): Promise<Product | null> {
   try {
     const response = await axios.get(`https://fakestoreapi.com/products/${id}`);
@@ -30,13 +30,14 @@ async function productById(id: string): Promise<Product | null> {
   }
 }
 
-// ProductPage component which is rendered dynamically for the product page
+
 export default async function ProductPage({ params }: Props) {
-  const { id } = params; // Extract `id` from params
-  const product = await productById(id); // Fetch product by ID
+  const { id } = await params; 
+  console.log(typeof id)
+  const product = await productById(id);
   
   if (!product) {
-    return notFound(); // Return 404 if no product found
+    return notFound(); 
   }
 
   return (
@@ -49,6 +50,7 @@ export default async function ProductPage({ params }: Props) {
               height={500}
               src={product.image}
               alt={product.title}
+              priority 
               className="w-full max-w-md h-96 object-contain rounded-lg"
             />
           </div>
