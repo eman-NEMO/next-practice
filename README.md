@@ -48,7 +48,7 @@ Styled with Tailwind CSS for a clean UI.
 
 Clicking a product navigates to its details page (e.g., /products/[id]).
 
-Displays full product details:
+#### Displays full product details:
 
 Name
 
@@ -62,7 +62,7 @@ Category
 
 Uses Next.js dynamic routing.
 
-### ✅ Additional Enhancements
+## ✅ Additional Enhancements
 
 
 ⏳ Loading States: Displays a spinner while fetching data.
