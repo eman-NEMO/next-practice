@@ -24,11 +24,11 @@ cd products-gallery
 
 ### 2️⃣ Install dependencies:
 
-npm install  # or yarn install
+npm install  
 
 ### 3️⃣ Start the development server:
 
-npm run dev  # or yarn dev
+npm run dev  
 
 🔹 Open http://localhost:3000 in your browser to see the app
 
